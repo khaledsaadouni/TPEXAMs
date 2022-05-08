@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+<div class="example-wrapper">
+<table class="table">
+    <tr>
+        <td>titre</td>
+        <td> {{ pfe.titre }}</td>
+    </tr>
+    <tr>
+        <td>nom</td>
+        <td> {{ pfe.nom }}</td>
+    </tr>
+    <tr>
+        <td>entreprise</td>
+        <td> {{ pfe.entreprise }}</td>
+    </tr>
+
+</table>
+    <a href="{{ path("entreprise") }}">Liste entreprise</a>
+    <br>
+    <a href="{{ path("list") }}">Liste PFE </a>
+</div>
+{% endblock %}
