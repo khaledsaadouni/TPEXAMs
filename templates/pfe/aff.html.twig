@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="example-wrapper">
+
+        <div class="row">
+            {%for entreprise in list%}
+                {% if loop.index%4==0 %}
+                <div class="card text-white m-auto bg-{{'primary'}} mb-3 " style="width: 18rem;">
+               {% elseif loop.index%4==1%}
+                   <div class="card text-white m-auto bg-{{'danger'}} mb-3 " style="width: 18rem;">
+                       {% elseif loop.index%4==2%}
+                       <div class="card text-white m-auto bg-{{'warning'}} mb-3 " style="width: 18rem;">
+                           {% elseif loop.index%4==3%}
+                           <div class="card text-white m-auto bg-{{'info'}} mb-3 " style="width: 18rem;">
+{% endif %}
+                           <div class="card-header">{{entreprise.getDesignation()}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{entreprise.getPves()|length}} Pfe(s)</h5>
+                    </div>
+
+                </div>
+            {%endfor%}
+        </div>
+
+    </div>
+{% endblock %}

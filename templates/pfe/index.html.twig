@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="example-wrapper">
+
+        <div class="row">
+            {% for e in list %}
+                <div class="card mb-2 m-lg-2" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title">{{ e.titre }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ e.nom }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ e.entreprise }}</h6>
+                    <a href="{{ path('add',{'id':e.id}) }}" class="card-link"><i class="bi bi-pencil-fill" ></i></a>
+                    <a href="" class="card-link"><i class="bi bi-trash-fill" ></i></a>
+                </div>
+                </div>{% endfor %}
+        </div>
+
+
+    </div>
+{% endblock %}
